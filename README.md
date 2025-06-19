@@ -80,7 +80,7 @@ This dashboard is designed to help users:
    - Cleaned and filtered to remove missing or non-relevant records
 
 2. **CSV Export for Looker Studio:**
-   - Exported cleaned data to `clean_restaurant_data.csv`
+   - Exported cleaned data to `clean_restaurant_dataset.csv`
    - Loaded the file into **Google Sheets** for dynamic connection to Looker Studio
 
 3. **Dashboard Construction:**
@@ -89,7 +89,17 @@ This dashboard is designed to help users:
    - Used Looker Studio features like maps, bar charts, scorecards (KPIs), and category breakdowns
 
 ---
+### 🔗 Dashboard Access
 
+- **📄 PDF version (static snapshot):**  
+  File: `dashboard/Yelp_Restaurant_Insights_Dashboard_Report.pdf`
+
+- **🌐 Interactive dashboard (recommended):**  
+  [Yelp Restaurant Insights Dashboard Report (Google Looker Studio)](https://lookerstudio.google.com/s/tE5yTNRuoms)
+
+> ⚠️ *Note: The PDF version provides a static overview and does not support interactive features such as filtering by city, category, or rating. For the full experience, please use the Looker Studio link above.*
+
+---
 ### 📊 Dashboard Features
 
 - **Map of Business Locations** by average star rating  
@@ -102,7 +112,7 @@ This dashboard is designed to help users:
 ### 📁 Deliverables
 
 - `notebooks/` → Python notebooks with data loading, filtering, and export  
-- `data/` → Cleaned dataset for dashboard (e.g., `clean_restaurant_data.csv`)  
+- `data/` → Cleaned dataset for dashboard (e.g., `clean_restaurant_dataset.csv`)  
 - `dashboard/` → Google Looker Studio screenshots and links  
 - `README.md` → This file  
 
