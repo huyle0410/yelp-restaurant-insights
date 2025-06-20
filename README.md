@@ -154,7 +154,7 @@ This dashboard is designed to help users:
 
 **Confusion Matrix – Logistic Regression:**
 
-![Confusion Matrix – Logistic Regression](dashboard/screenshots/logistic_regression_confusion.png)
+![Confusion Matrix – Logistic Regression](dashboard/screenshots/random_forest_confusion.png)
 
 **Insight:**  
 The model performs strongly across both classes, especially for positive reviews. While there are some false negatives (positive reviews predicted as negative), the model maintains an overall strong balance.
@@ -175,7 +175,7 @@ The model performs strongly across both classes, especially for positive reviews
 
 **Confusion Matrix – Random Forest:**
 
-![Confusion Matrix – Random Forest](dashboard/screenshots/random_forest_confusion.png)
+![Confusion Matrix – Random Forest](dashboard/screenshots/logistic_regression_confusion.png)
 
 **Insight:**  
 Random Forest achieves high performance for positive reviews, but shows a noticeable drop in **recall for negative reviews**. This suggests it tends to favor classifying reviews as positive, possibly due to class imbalance or subtlety in negative language.
