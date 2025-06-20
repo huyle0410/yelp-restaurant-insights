@@ -114,6 +114,78 @@ This dashboard is designed to help users:
 - `notebooks/` → Python notebooks with data loading, filtering, and export  
 - `data/` → Cleaned dataset for dashboard (e.g., `clean_restaurant_dataset.csv`)  
 - `dashboard/` → Google Looker Studio screenshots and links  
-- `README.md` → This file  
+- `README.md` → This file 
+
+---
+
+## 🤖 Phase 3: Predictive Modeling (Sentiment Analysis)
+
+**Goal:** Predict whether a Yelp restaurant review is **positive (4–5 stars)** or **negative (1–2 stars)** based on the content of the review text. This enables scalable, automated sentiment classification across thousands of customer reviews.
+
+---
+
+### 📌 Dataset & Preprocessing
+
+- **Source:** `yelp_academic_dataset_review.json` (100,000 sampled reviews)
+- **Labeling:**
+  - `1` = Positive (stars ≥ 4)
+  - `0` = Negative (stars ≤ 2)
+- **Excluded:** 3-star neutral reviews
+- **Preprocessing steps:**
+  - Text lowercasing
+  - Stopword removal
+  - TF-IDF vectorization (10,000 features)
+
+---
+
+### 🧠 Models & Evaluation
+
+#### 1️⃣ **Logistic Regression (Baseline)**
+
+| Metric         | Negative (0) | Positive (1) |
+|----------------|--------------|--------------|
+| **Precision**  | 0.93         | 0.95         |
+| **Recall**     | 0.83         | 0.98         |
+| **F1-score**   | 0.87         | 0.97         |
+| **Support**    | 3,783        | 13,945       |
+
+- **Overall Accuracy:** 95%
+- **Weighted F1-score:** 0.95
+
+**Confusion Matrix – Logistic Regression:**
+
+![Confusion Matrix – Logistic Regression](dashboard/screenshots/logistic_regression_confusion.png)
+
+**Insight:**  
+The model performs strongly across both classes, especially for positive reviews. While there are some false negatives (positive reviews predicted as negative), the model maintains an overall strong balance.
+
+---
+
+#### 2️⃣ **Random Forest**
+
+| Metric         | Negative (0) | Positive (1) |
+|----------------|--------------|--------------|
+| **Precision**  | 0.93         | 0.91         |
+| **Recall**     | 0.65         | 0.99         |
+| **F1-score**   | 0.77         | 0.95         |
+| **Support**    | 3,783        | 13,945       |
+
+- **Overall Accuracy:** 92%
+- **Weighted F1-score:** 0.91
+
+**Confusion Matrix – Random Forest:**
+
+![Confusion Matrix – Random Forest](dashboard/screenshots/random_forest_confusion.png)
+
+**Insight:**  
+Random Forest achieves high performance for positive reviews, but shows a noticeable drop in **recall for negative reviews**. This suggests it tends to favor classifying reviews as positive, possibly due to class imbalance or subtlety in negative language.
+
+---
+
+### 📁 Deliverables
+
+- `ml_project/review_sentiment_analysis.ipynb` – Jupyter notebook with data processing, model training, and evaluation
+- `dashboard/screenshots/` – Confusion matrix plots for both models
+- `README.md` – Updated with problem description, model performance, and key findings 
 
 
